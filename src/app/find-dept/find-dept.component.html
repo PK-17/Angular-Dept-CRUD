@@ -1,0 +1,10 @@
+<div class="container">
+    <h2>Details of Department {{ deptdata.dname }}</h2>
+    <hr>
+    <div class="bg-primary bg-opacity-10 border border-info rounded">
+        Id: {{ deptdata.id }} <br>
+        Location: {{ deptdata.location }}
+    </div>
+</div>
+<br>
+<a [routerLink]="['/list']" class="btn btn-outline-secondary">Back to List</a>

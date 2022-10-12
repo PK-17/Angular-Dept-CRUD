@@ -1,0 +1,27 @@
+<div class="container">
+    <h4 class="text-danger">Department Listing</h4>
+    <div class="shadow bg-info bg-opacity-10 border border-info rounded">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dept of deptlist">
+                    <td>{{ dept.id }}</td>
+                    <td>{{ dept.dname }}</td>
+                    <td>{{ dept.location }}</td>
+                    <td>
+                        <a [routerLink]="['/find/', dept.id]" class="btn btn-info" role="button">Details</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a [routerLink]="['/edit/', dept.id]" class="btn btn-warning" role="button">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a [routerLink]="['/delete/', dept.id]" class="btn btn-danger" role="button">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

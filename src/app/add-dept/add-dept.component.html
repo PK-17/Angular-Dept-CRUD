@@ -1,0 +1,56 @@
+<h2>Adding New Department</h2>
+<br>
+<form (ngSubmit)="saveDept(deptdata)" #deptForm="ngForm">
+    <table>
+        <tr>
+            <td>
+                <label for="id">Enter ID: </label>
+            </td>
+            <td>
+                <input type="number" id="id" name="id" [(ngModel)]="deptdata.id" required #id="ngModel">
+            </td>
+            <td>
+                <div *ngIf="id.invalid && (id.dirty || id.touched)" style="color: red;">
+                    <div *ngIf="id.errors?.['required']">
+                        ID Cannot be Blank.
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="id">Enter Department Name: </label>
+            </td>
+            <td>
+                <input type="text" id="dname" name="dname" [(ngModel)]="deptdata.dname" required #dname="ngModel">
+            </td>
+            <td>
+                <div *ngIf="dname.invalid && (dname.dirty || dname.touched)" style="color: red;">
+                    <div *ngIf="dname.errors?.['required']">
+                        Department Name is Required.
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="id">Enter Location: </label>
+            </td>
+            <td>
+                <input type="text" id="location" name="location" [(ngModel)]="deptdata.location" required #location="ngModel">
+            </td>
+            <td>
+                <div *ngIf="location.invalid && (location.dirty || location.touched)" style="color: red;">
+                    <div *ngIf="location.errors?.['required']">
+                        Location is Required.
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Save" [disabled]="!deptForm.valid" class="btn btn-success">
+            </td>
+        </tr>
+    </table>
+</form>
